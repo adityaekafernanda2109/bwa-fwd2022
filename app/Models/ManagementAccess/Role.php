@@ -26,4 +26,14 @@ class Role extends Model
          'updated_at',
          'deleted_at',
      ];
+
+     public function role_user()
+     {
+        return $this->hasMany('App\Models\ManagementAccess\RoleUser', 'role_id');
+     }
+
+     public function permission_role()
+     {
+        return $this->hasMany('App\Models\ManagementAcces\PermissionRole', 'role_id');
+     }
 }
